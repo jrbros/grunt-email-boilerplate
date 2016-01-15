@@ -89,7 +89,7 @@ module.exports = function(grunt) {
             },
             img: {
                 files: ['src/img/*'],
-                tasks: ['copy', 'imagemin'],
+                tasks: ['copy'],
                 options: {
                     spawn: false
                 }
@@ -109,20 +109,6 @@ module.exports = function(grunt) {
                 src: ['img/*'],
                 dest: 'build/'
             }
-        },
-
-        imagemin: {
-            dist: {
-                options: {
-                    optimizationLevel: 5
-                },
-                files: [{
-                    expand: true,
-                    cwd: 'build/',
-                    src: ['img/*.{png,jpg,jpeg,gif}'],
-                    dest: 'build/'
-                }]
-            }
         }
     });
 
@@ -132,7 +118,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
-    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-uncss');
     grunt.loadNpmTasks('grunt-premailer');
 
@@ -143,5 +128,5 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', ['clean', 'copy', 'jade', 'postcss']);
 
     // Prod task(s).
-    grunt.registerTask('prod', ['clean', 'copy', 'imagemin', 'jade', 'postcss', 'uncss', 'premailer']);
+    grunt.registerTask('prod', ['clean', 'copy', 'jade', 'postcss', 'uncss', 'premailer']);
 };
