@@ -1,4 +1,4 @@
-# Grunt Boilerplate
+# Grunt Email Boilerplate
 Grunt tasks for your next email newsletter project.
 
 ## Requirements
@@ -18,10 +18,10 @@ Grunt tasks for your next email newsletter project.
 - Inline css styles in production
 
 ## Getting started
-Setup ```npm install```
+- Setup ```npm install```
 
-Run ```grunt``` for development
-Run ```grunt prod``` for build production file
+- Run ```grunt``` for development
+- Run ```grunt prod``` for build production file
 
 ## Version
 
